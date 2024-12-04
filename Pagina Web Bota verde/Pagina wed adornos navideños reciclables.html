@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bota Verde</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        header {
+             background-image: url('https://wallpapers.com/images/hd/1920x1080-hd-christmas-h8j7wsuijtp3kr15.jpg'); /* Reemplaza con tu imagen */
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 5px #000;
+        }
+		  header img {
+            width: 200px;
+            vertical-align: middle;
+        }
+        footer img {
+            width: 150px;
+            vertical-align: middle;
+        }
+        header h1 {
+            display: inline-block;
+            margin: 0;
+            font-size: 1.5rem;
+            vertical-align: middle;
+        }
+        nav {
+            background-color: #228B22;
+            color: white;
+            display: flex;
+            justify-content: space-around;
+            padding: 1rem 0;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .banner {
+            
+            background-size: cover;
+            background-position: center;
+            height: 200px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-shadow: 2px 2px 5px #000;
+        }
+        .siu {
+            padding: 2rem;
+            text-align: center;
+        }
+        .section {
+            padding: 2rem;
+            text-align: center;
+        }
+		
+        .products, .customize, .about {
+            margin: 1rem auto;
+            max-width: 1200px;
+        }
+        .products img, .customize img {
+            width: 100%;
+            max-width: 300px;
+            margin: 1rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .products img:hover, .customize img:hover {
+            transform: scale(1.1);
+        }
+        .footer {
+            background-color: #f4f4f4;
+            color: black;
+            text-align: center;
+            padding: 1rem;
+        }
+        .btn-customize {
+            background-color: #006400;
+            color: white;
+            padding: 0.5rem 2rem;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .btn-customize:hover {
+            background-color: #228B22;
+        }
+        .cart-button {
+            background-color: #228B22;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            cursor: pointer;
+        }
+        .cart-button:hover {
+            background-color: #006400;
+        }
+		canvas {
+            
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .gallery img {
+            width: 150px;
+            height: auto;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+        }
+        .lightbox.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+		.background-container {
+           
+            background-image: url('./uno.jpg'); /* URL de la imagen */
+            background-size: cover; /* Asegura que la imagen cubra todo el contenedor */
+            background-position: center; /* Centra la imagen */
+			 z-index: 2;
+            color: white;
+            text-align: center;
+            top: 50%;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="./vivo.png" alt="Bota Verde Logo">
+    </header>
+    <nav>
+        <a href="#productos">Productos</a>
+        <a href="#personalizar">Personalizar</a>
+        <a href="#impacto">Acerca de nosotros</a>
+        <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="background-container">
+        
+        <div class="siu">
+        <h2>¡Celebra una Navidad Verde!</h2>
+		   
+	<section id="impacto" class="section about">
+        <h2>Misión</h2>
+        <h4>Ofrecer soluciones de decoración  ecológica que respondan a las tendencias sostenibles del mercado, proporcionando adornos reciclables y empaques que promuevan celebraciones conscientes y responsables para nuestros clientes.</h4>
+        <h2>Visión</h2>
+        <h4>Convertirnos en la opción preferida de consumidores y empresas que buscan productos  sostenibles, destacándonos en el mercado como un referente de calidad y compromiso ambiental.</h4>
+        
+	</section>
+    <section id="productos" class="section products">
+        <h2>Productos Destacados</h2>
+        <div>
+            <img src="https://19bis.com/objectbis/wp-content/uploads/2015/11/bola-cola.jpg" alt="Esfera Reciclable" onclick="showProductDetails('Producto 1', 'Esfera navideña hecha con materiales reciclables.')" />
+            <img src="https://www.umamanualidades.com/wp-content/uploads/2017/11/goma-eva-para-hacer-manualidades-infantiles.webp" alt="Decoración Reciclable" onclick="showProductDetails('Producto 2', 'árbol materiales reciclados.')"/>
+            <img src="https://cdn7.craftologia.com/ss_secreto/2558/640x640/2558.jpg.webp" alt="Adorno Sostenible" onclick="showProductDetails('Producto 3', 'Adorno sostenible perfecto para tu árbol.')"/>
+        </div>
+        <div id="product-details" style="display: none;">
+            <h3 id="product-title"></h3>
+            <p id="product-description"></p>
+            <button class="cart-button" onclick="addToCart()">Agregar al carrito</button>
+        </div>
+    </section>
+    <section id="personalizar" class="section customize">
+        <h2>Personaliza tu Decoración</h2>
+        <h4>Crea tus propios adornos navideños con materiales reciclables.</h4>
+        <img src="https://ecobrisamanualidades.com/wp-content/uploads/2022/12/1-1024x688.jpg" alt="Personalización" onclick="startCustomization()">
+		<div></div>
+        <button class="btn-customize" onclick="startCustomization()">Empieza Ahora</button>
+    </section>
+    <section id="impacto" class="section about">
+        <h2>¿Por qué elegir verde?</h2>
+        <h4>Descubre cómo apoyar productos sostenibles puede marcar la diferencia en nuestro planeta. Bota Verde ofrece decoraciones navideñas únicas y accesibles que transforman tu hogar en un espacio especial para celebrar la Navidad y el fin de año. Al elegir nuestros productos, no solo estás embelleciendo tu entorno, sino también contribuyendo activamente a reducir la contaminación al optar por creaciones elaboradas con materiales reutilizables.</h4>
+    </section>
+	</div>
+    </div>
+	<canvas id="canvas" width="0" height="0"></canvas>
+        <div class="gallery">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqQyzsXfaewWVjvwGWpy-i5h7Zj82xgqLh8Q&s" alt="Imagen 1">
+        <img src="https://manualidadeseli.com/wp-content/uploads/2021/06/%C2%A1Adornos-Navidenos-Que-Puedes-Hacer-Con-Materiales-Reciclados-7-scaled.jpg" alt="Imagen 2">
+        <img src="https://static.guiainfantil.com/media/31042/c/creativos-adornos-de-navidad-con-material-reciclado-para-ninos-xs.jpg" alt="Imagen 3">
+        <img src="https://i.pinimg.com/550x/68/1f/d5/681fd59253bd7798691ad6d7797efe9e.jpg" alt="Imagen 4">
+        <img src="https://alcazardesanjuan.com/wp-content/uploads/2019/11/1575062962_838_6-Adornos-navidenos-con-materiales-reciclados.jpg" alt="Imagen 5">
+        <img src="https://19bis.com/objectbis/wp-content/uploads/2008/11/PCB-Xmas-Hangers.gif" alt="Imagen 6">
+    </div>
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close" id="lightbox-close">&times;</span>
+        <img src="" alt="Imagen ampliada" id="lightbox-img">
+    </div>
+    <footer id="contacto" class="footer">
+	<img src="./Imagen12.png" alt="Bota Verde Logo">
+        <p>Síguenos en nuestras redes sociales
+		Facebook: Bota Verde 
+		Intagram: @Bota.Verde</p>
+        <p>&copy; 2024 Bota Verde. Todos los derechos reservados.</p>
+		
+    </footer>
+
+    <script>
+        function showProductDetails(title, description) {
+            document.getElementById("product-title").innerText = title;
+            document.getElementById("product-description").innerText = description;
+            document.getElementById("product-details").style.display = "block";
+        }
+
+        function addToCart() {
+            alert("El producto ha sido agregado al carrito.");
+        }
+
+        function startCustomization() {
+            alert("¡Comienza a personalizar tu adorno!");
+        }
+    
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+        // Lightbox functionality
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const lightboxClose = document.getElementById('lightbox-close');
+        const galleryImages = document.querySelectorAll('.gallery img');
+
+        galleryImages.forEach(image => {
+            image.addEventListener('click', () => {
+                lightboxImg.src = image.src;
+                lightbox.classList.add('active');
+            });
+        });
+
+        lightboxClose.addEventListener('click', () => {
+            lightbox.classList.remove('active');
+        });
+
+        lightbox.addEventListener('click', (e) => {
+            if (e.target !== lightboxImg && e.target !== lightboxClose) {
+                lightbox.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>
